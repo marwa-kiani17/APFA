@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience Tracker</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    background-color: #0056b3;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .card h3 {
+    color: #0056b3;
+    margin-top: 0;
+  }
+  .card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .card li {
+    margin-bottom: 10px;
+  }
+  .card li:last-child {
+    margin-bottom: 0;
+  }
+  .card button {
+    background-color: #ffc107;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .card .add-btn {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  .experience-summary {
+    grid-column: span 2;
+    text-align: center;
+  }
+  .experience-summary h2 {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Freelance Assistant</h1>
+</div>
+
+<div class="container">
+  <div class="experience-summary">
+    <h2>My Experience Summary</h2>
+    <p>Total Experience: 3.5 years</p>
+    <p>Projects Completed: 12</p>
+  </div>
+
+  <div class="card">
+    <h3>Project 1</h3>
+    <ul>
+      <li>Client: XYZ Company</li>
+      <li>Duration: 6 months</li>
+      <li>Role: Data Analyst</li>
+      <!-- Add more details here -->
+    </ul>
+    <button class="add-btn">+</button>
+  </div>
+
+  <div class="card">
+    <h3>Project 2</h3>
+    <ul>
+      <li>Client: ABC Inc.</li>
+      <li>Duration: 8 months</li>
+      <li>Role: Machine Learning Engineer</li>
+      <!-- Add more details here -->
+    </ul>
+    <button class="add-btn">+</button>
+  </div>
+
+  <!-- Add more project cards here -->
+</div>
+
+</body>
+</html>

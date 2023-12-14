@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Freelance Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+    }
+    .navbar {
+      background-color: #0056b3; /* Deep blue background */
+      color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      align-items: center; /* Center items vertically in the navbar */
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .search-icon {
+      cursor: pointer;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      height: 50px;
+      margin-right: 1rem;
+    }
+    .hero-section {
+      background-color: #007bff; /* Brighter blue background */
+      color: white;
+      padding: 3rem;
+      position: relative;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-size: 3rem;
+      margin: 0.5rem 0;
+    }
+    .hero-section p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .hero-section button {
+      padding: 1rem 2rem;
+      background-color: #ffc107; /* Yellow button */
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .hero-image {
+      max-width: 30%;
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo-container">
+    <img src="logo.png" alt="AI Freelance Assistant Logo" class="logo">
+    <h1>AI Freelance Assistant</h1>
+  </div>
+  <div>
+    <a href="/sec1.html">Personal Branding</a>
+    <a href="/sec3.html">Portfolio Builder</a>
+    <a href="/sec4.html">Experience Tracker</a>
+    <span class="search-icon">🔍</span>
+  </div>
+</div>
+
+<div class="hero-section">
+  <h1>Helping you Find the right Job</h1>
+  <p>Join our job portal to get visible to notable organizations!</p>
+  <button onclick="startChat()">Start Chat</button>
+  <img src="hero.png" class="hero-image" alt="Hero Image" style="height: 300px;">
+</div>
+
+<script>
+  function startChat() {
+    // Implement chat functionality or redirect to chat page
+    window.location.href = '/sec2.html';
+  }
+</script>
+
+</body>
+</html>

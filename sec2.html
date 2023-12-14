@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Assistance</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f0f0f0;
+  }
+  .navbar {
+    background-color: #0056b3; /* Deep blue background */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+  }
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+  }
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  .chat-container {
+    background-color: #007bff; /* Brighter blue background */
+    color: white;
+    padding: 3rem;
+    position: relative;
+    min-height: 400px; /* Adjust as per your content */
+  }
+  .chat-bubbles {
+    max-height: 300px;
+    overflow-y: auto;
+    position: absolute;
+    bottom: 50px;
+    left: 5%;
+    right: 5%;
+  }
+  .chat-bubble {
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 15px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    max-width: 80%;
+  }
+  .chat-input {
+    position: absolute;
+    bottom: 10px;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chat-input input {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    border: none;
+    margin-right: 0.5rem;
+    width: calc(100% - 40px); /* Adjust as needed */
+  }
+  .chat-input button {
+    background-color: #ffc107; /* Yellow button */
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div>AI Freelance Assistant</div>
+  <div>
+    <a href="#personal-branding">Personal Branding</a>
+    <a href="#portfolio-builder">Portfolio Builder</a>
+    <a href="#experience-tracker">Experience Tracker</a>
+    <span>🔍</span>
+  </div>
+</div>
+
+<div class="chat-container">
+  <div class="chat-bubbles" id="chatBubbles">
+    <!-- Chat messages will appear here -->
+  </div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Hello there!" onkeypress="handleKeypress(event)">
+    <button onclick="sendMessage()">⏩</button>
+  </div>
+</div>
+
+<script>
+function sendMessage() {
+    var input = document.getElementById('chatInput');
+    var message = input.value.trim();
+    if(message) {
+        var chatBubbles = document.getElementById('chatBubbles');
+        var bubble = document.createElement('div');
+        bubble.className = 'chat-bubble';
+        bubble.textContent = message;
+        chatBubbles.appendChild(bubble);
+        input.value = '';
+        chatBubbles.scrollTop = chatBubbles.scrollHeight; // Scroll to the bottom
+    }
+}
+
+function handleKeypress(event) {
+    // Detect 'Enter' keypress and send the message
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+}
+
+var promptsAndAnswers = {
+    "hello": "Hi there! How can I help you today?",
+    "services": "I offer assistance with personal branding, portfolio building, and tracking your work experience.",
+    "help": "Sure, I can help you with a variety of tasks. What do you need assistance with?",
+    "contact": "You can contact me via email at contact@freelanceassistant.com."
+};
+
+function sendMessage() {
+    var input = document.getElementById('chatInput');
+    var message = input.value.trim().toLowerCase();
+
+    if(message) {
+        // User's message
+        addChatBubble(message, 'user');
+
+        // Response from the promptsAndAnswers object
+        var answer = promptsAndAnswers[message] || "I'm not sure how to answer that. Could you try asking something else?";
+        addChatBubble(answer, 'bot');
+
+        input.value = '';
+    }
+}
+
+function addChatBubble(text, sender) {
+    var chatBubbles = document.getElementById('chatBubbles');
+    var bubble = document.createElement('div');
+    bubble.className = 'chat-bubble ' + sender;
+    bubble.textContent = text;
+    chatBubbles.appendChild(bubble);
+    chatBubbles.scrollTop = chatBubbles.scrollHeight; // Scroll to the bottom
+}
+
+function handleKeypress(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+}
+
+// You can tell users what prompts they can make by adding a welcome message
+window.onload = function() {
+    addChatBubble("Hello! You can ask me about 'hello', 'services', 'help', or 'contact'.", 'bot');
+};
+</script>
+
+</body>
+</html>
+</script>
+
+</body>
+</html>

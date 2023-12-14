@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Builder</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    background-color: #0056b3;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+  }
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .card h3 {
+    color: #0056b3;
+    margin-top: 0;
+  }
+  .card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .card li {
+    margin-bottom: 10px;
+  }
+  .card li:last-child {
+    margin-bottom: 0;
+  }
+  .card button {
+    background-color: #ffc107;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .card .add-btn {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  .education, .experiences, .certificate {
+    grid-column: span 2;
+  }
+  .personal-greeting {
+    grid-column: span 3;
+    text-align: center;
+  }
+  .personal-greeting h2 {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Freelance Assistant</h1>
+</div>
+
+<div class="container">
+  <div class="personal-greeting">
+    <h2>Hey Marwa!</h2>
+    <p>Have a look at your latest achievements:</p>
+    <p>Acquired 0 Skills | Improved 5 Skills</p>
+  </div>
+
+  <div class="card my-skills">
+    <h3>My Skills</h3>
+    <ul>
+      <li>Data Analysis - Expert 1 Yrs</li>
+      <li>Python - Advanced 2.5 Yrs</li>
+      <!-- Add more skills here -->
+    </ul>
+    <button class="add-btn">+</button>
+  </div>
+
+  <div class="card education">
+    <h3>Education</h3>
+    <p>BS Data Science</p>
+    <p>February 2021 - Current</p>
+    <p>Grade: CGPA 3.01</p>
+    <p>COMSATS UNIVERSITY ISLAMABAD</p>
+    <!-- Add more education here -->
+    <button class="add-btn">+</button>
+  </div>
+
+  <div class="card experiences">
+    <h3>Experiences</h3>
+    <p>Data Science Intern - 6 July 2023 Currently Working</p>
+    <p>BHGroup Lahore, Punjab, Pakistan</p>
+    <!-- Add more experiences here -->
+    <button class="add-btn">+</button>
+  </div>
+
+  <div class="card certificate">
+    <h3>Certificate</h3>
+    <ul>
+      <li>DATA ANALYSIS Skill Test - Dice Camp</li>
+      <li>02 Sep 2023 - 07 Sep 2023</li>
+      <!-- Add more certificates here -->
+    </ul>
+    <button class="add-btn">+</button>
+  </div>
+
+  <div class="card course-credential">
+    <h3>Course Credential</h3>
+    <p>Data Analytics Course</p>
+    <p>3 months</p>
+    <!-- Add more courses here -->
+    <button class="add-btn">+</button>
+  </div>
+</div>
+
+</body>
+</html>
